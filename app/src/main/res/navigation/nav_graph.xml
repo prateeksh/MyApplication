@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/permission_fragment">
+
+    <fragment
+        android:id="@+id/permission_fragment"
+        android:name="com.company.myapplication.fragment.PermissionsFragment"
+        android:label="PermissionFragment" >
+
+        <action
+            android:id="@+id/action_permission_to_video"
+            app:destination="@id/video_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/video_fragment"
+        android:name="com.company.myapplication.fragment.VideoFragment"
+        android:label="VideoFragment" >
+
+        <action
+            android:id="@+id/action_video_to_image"
+            app:destination="@id/image_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/image_fragment"
+        android:name="com.company.myapplication.fragment.ImageFragment"
+        android:label="ImageFragment" >
+
+        <action
+            android:id="@+id/action_image_to_view"
+            app:destination="@id/view_info_fragment" />
+
+        <argument
+            android:name="root_directory"
+            app:argType="string" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/view_info_fragment"
+        android:name="com.company.myapplication.fragment.ViewFragment"
+        android:label="ViewFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="tag"
+            app:argType="string" />
+        <argument
+            android:name="video_uri"
+            app:argType="string" />
+        <argument
+            android:name="image_uri"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
